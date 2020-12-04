@@ -1,0 +1,538 @@
+/* Main CSS */
+
+
+@font-face {
+  font-family: belleza;
+  src: url(fonts/belleza/Belleza-Regular.ttf);
+}
+
+.roboto {
+	font-family: Roboto;
+}
+
+.comic {
+	font-family: Comic Sans MS;
+}
+
+.belleza {
+	font-family: belleza;
+}
+
+.verdana {
+	font-family: Verdana, Geneva, sans-serif
+}
+
+.topNavbar {
+	position: fixed;
+	z-index: 1000;
+} 
+
+.navbarContainer {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+.getStartedContainer {
+	margin-right: 8px;
+}
+
+.getStartedBtn {
+	background-color: #007bff;
+	color: #282828;
+	border: none;
+	/*text-decoration: underline;*/
+}
+
+.getStartedBtn:hover {
+	color: #bbecd7;
+}
+
+.mainBackground {
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	position: relative;
+}
+
+.mainBackgroundContainer {
+	/*background-color: #BFEFFF;*/
+	/*#87CEFF;*/
+	position: relative;
+	text-align: center;
+}
+
+.centered {
+	font-size: 44px;
+  position: absolute;
+  top: 38%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.boxContainer {
+ padding-bottom: 50px;
+ padding-top: 80px;
+}
+
+.titleContainer {
+	position: flex;
+	top: 30px;
+	text-align: center;	
+	font-size: 30px;
+	color: #606060;
+}
+
+.horizontalRule {
+	width: 200px;
+	border-width: 3px;
+}
+
+.detailContainer {
+	position: flex;
+	top: 30px;
+	text-align: center;	
+	font-size: 18px;
+	color: #989898;
+}
+
+.firstSectionContainer {
+	padding-right: 25%;
+	padding-left: 25%;
+}
+
+/* .slideshowContainer { */
+	/*width: 100%;*/
+	/*height: 50px;*/
+/* } */
+
+.newsImages {
+	width: 100%;
+	height: 340px;
+}
+
+.cityButton {
+
+  background-color: #1E90FF;
+  border: none;
+  color: white;
+  padding:8px;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 5px;
+  /*margin: 10px;*/
+  border-radius: 25px;
+}
+
+.cityBtnContainer {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.city1Btn {
+  opacity: 0.65;
+}
+
+.city2Btn {
+  opacity: 0.65;
+}
+
+.city3Btn {
+  opacity: 0.65;
+}
+
+.city4Btn {
+  opacity: 0.65;
+}
+
+.city1Btn:hover {
+	opacity: 1;
+}
+
+.city2Btn:hover {
+	opacity: 1;
+}
+
+.city3Btn:hover {
+	opacity: 1;
+}
+
+.city4Btn:hover {
+	opacity: 1;
+}
+
+.marginContainer {
+	margin-top: 20px;
+	margin-right: 8%;
+	margin-left: 8%;
+}
+
+/*.cardImage {
+	height: 230px;
+}
+
+.cardImage:hover {
+	opacity: 0.6;
+  }*/
+
+  .shadowBehind {
+   border-radius: 5px;
+   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+ }
+
+ .shadowBehind:hover {
+   border-radius: 5px;
+   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+ }
+
+ .container {
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 109.5%;
+  position: relative;
+  left: -15px;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  height: 230px;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.5;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.showBtn {
+
+  background-color: #ffffff;
+  border: none;
+  color: #505050;
+  padding:8px;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 5px;
+  border-radius: 25px;
+  opacity: 1;
+}
+
+.treatmentContainer {
+  background-color: #F0F8FF;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.treatmentCardsContainer {
+  background-color: #F0F8FF;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.treatmentButton {
+ background-color: #00b8ff;
+ border: none;
+ color: white;
+ padding-top: 14px;
+ padding-bottom: 14px;
+ padding-left: 20px;
+ padding-right: 20px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 15px;
+ margin: 4px 20px;
+ /*margin: 10px;*/
+ border-radius: 25px;
+}
+
+.treatmentBtn {
+  opacity: 0.75;
+}
+
+.treatmentBtn:hover {
+  opacity: 1;
+}
+
+.toursimContainer {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.tourismDestinationImages {
+  width: 220px;
+  height: 200px;
+}
+
+.toursitDesctiption {
+  height: 235px;
+}
+
+.stepsContainer {
+ background-color: #F0F8FF;
+ padding-top: 65px;
+ padding-bottom: 100px;
+ padding-left: 100px;
+ padding-right: 100px;
+ position: relative;
+}
+
+.stepsButton {
+  display: table-cell;
+  line-height: 100px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid #00c786;
+  background-color: #00c786;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 38px;
+  color: #ffffff;
+  font-style: none;
+}
+
+.stepsButton {
+  display: table-cell;
+  line-height: 100px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid #00c786;
+  background-color: #00c786;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 38px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.stepsButton:hover {
+  transform: scale(1.08) perspective(1px);
+  text-decoration: none;
+  color: #696969 ;
+}
+
+.stepsNumberContainer {
+ position: absolute;
+ padding-top: 4px;
+ padding-left: 80px;
+ padding-right: 80px;;
+ width: 90%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+
+.hrSteps {
+  margin-top: 50px;
+  border-top: 2.2px dotted #00c7a4;
+  width: 75%;
+}
+
+.stepsDescriptionContainer {
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-right: 30px;;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.getStartedButton {
+  background-color: #00c7a4;
+  border: none;
+  color: white;
+  padding:8px;
+  width: 190px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 8px 5px;
+  /*margin: 10px;*/
+  border-radius: 25px;
+  opacity: 0.75;
+}
+
+.getStartedButton:hover {
+ opacity: 1;
+}
+
+.whyUsContainer {
+  padding-top: 55px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.whyUsDetailContainer {
+  top: 0px;
+  text-align: center; 
+  font-size: 18px;
+  color: #989898;
+}
+
+.whyUsOptions {
+  color: #009fff;
+  font-size: 20px;
+}
+
+.whyUsConclusion {
+  color: #717da5;
+  font-size: 22px;
+}
+
+.contactContainer {
+ background-color: #F0F8FF;
+ padding-top: 65px;
+ padding-bottom: 100px;
+ padding-left: 100px;
+ padding-right: 100px;
+ position: relative;
+}
+
+.contactWaysContainer {
+  padding-top: 4px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.participantsContainer {
+  padding-top: 50px;
+  padding-bottom: 105px;
+}
+
+.MultiCarousel { 
+  float: left;
+  overflow: hidden;
+  padding: 15px;
+  width: 100%;
+  position:relative; 
+}
+
+.MultiCarousel .MultiCarousel-inner { 
+  transition: 1s ease all;
+  float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item { 
+  float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item > div { 
+  text-align: center; 
+  padding:10px; 
+  margin:10px; 
+  background:#ffffff; 
+  color:#666;
+}
+
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { 
+  position:absolute; 
+  border-radius:50%;
+  top:calc(50% - 20px);
+}
+
+.MultiCarousel .leftLst {
+ left:0;
+}
+
+.MultiCarousel .rightLst {
+ right:0; 
+}
+
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { 
+  pointer-events: none; 
+  background:#ccc;
+}
+
+
+.partnersCardImage {
+  width: 160px;
+  height: 120px;
+}
+
+
+.partnerCards {
+  width: 180px;
+  height: 210px;
+  background-color: #ffffff;
+}
+
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #C0C0C0;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.logoImage {
+  width: 45px;
+  height: 45px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contactFooter {
+  width: 22%;
+}
+
