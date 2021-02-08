@@ -1,0 +1,350 @@
+
+@font-face {
+    font-family: belleza;
+    src: url(../fonts/belleza/Belleza-Regular.ttf);
+}
+
+.roboto {
+    font-family: Roboto;
+}
+
+.comic {
+    font-family: Comic Sans MS;
+}
+
+.belleza {
+    font-family: belleza;
+}
+
+.verdana {
+    font-family: Verdana, Geneva, sans-serif
+}
+
+.citiesListContainer {
+    width: 22%;
+    display: table-cell;
+
+}
+
+body {
+    width: 100%;
+}
+
+.bodyContainer {
+    width: 100%;
+    /*display: flex;*/
+    /*right: 0;*/
+    /*justify-content: space-between;*/
+    /*padding-left: 5%;*/
+    /*padding-right: 10%;*/
+    margin-left: 0%;
+    margin-right: 0%;
+    /*padding-top: 40px;*/
+
+    height: 50px;
+    box-sizing: border-box;
+    display: table;
+}
+
+.cardsContainer {
+    /*display: table-cell;*/
+
+    width: 100%;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0%;
+    /*justify-content: space-between;*/
+    /*position: center;*/
+}
+
+.citiesHeader {
+    /*float: left;*/
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 18px;
+}
+
+.cityHeader {
+    text-align: center;
+}
+
+
+
+.boxContainer {
+    padding-bottom: 50px;
+    padding-top: 30px;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+.titleContainer {
+    display: flex;
+    top: 30px;
+    text-align: center;
+    font-size: 28px;
+    color: #606060;
+}
+
+.horizontalRule {
+    width: 200px;
+    border-width: 3px;
+}
+
+.detailContainer {
+    display: flex;
+    top: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #989898;
+}
+
+
+.showBtn {
+
+    background-color: #ffffff;
+    border: none;
+    color: #505050;
+    padding:8px;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 5px;
+    border-radius: 25px;
+    opacity: 1;
+}
+
+.marginContainer {
+    margin-top: 20px;
+
+}
+
+/*.cardImage {
+	height: 230px;
+}
+
+.cardImage:hover {
+	opacity: 0.6;
+  }*/
+
+.shadowBehind {
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.shadowBehind:hover {
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cardCont {
+    position: relative;
+    width: 100%;
+    padding: 0px 0;
+    margin: 0px 0;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    position: relative;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    height: 230px;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container:hover .image {
+    opacity: 0.5;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.cityImages {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+/* slide show */
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+span.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1500000s;
+    animation-name: fade;
+    animation-duration: 1500000s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .95}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .95}
+    to {opacity: 1}
+}
+
+.mainBackgroundContainer {
+    /*background-color: #BFEFFF;*/
+    /*#87CEFF;*/
+    position: relative;
+    text-align: center;
+}
+
+.mainBackground {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 600px;
+    opacity: 0.8;
+    position: relative;
+    display: table-cell;
+}
+
+
+.treatmentContainer {
+    /*background-color: #F0F8FF;*/
+    padding-top: 20px;
+    padding-bottom: 70px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.treatmentCardsContainer {
+    /*background-color: #F0F8FF;*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.treatmentButton {
+    background-color: #00b8ff;
+    border: none;
+    color: white;
+    height: 84px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 20px;
+    /*margin: 10px;*/
+    border-radius: 25px;
+}
+
+.treatmentBtn {
+    opacity: 0.75;
+}
+
+.treatmentBtn:hover {
+    opacity: 1;
+}
