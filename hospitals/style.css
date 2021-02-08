@@ -170,10 +170,10 @@ body {
     text-align: center;
 }
 
-.container:hover .image {
+.cardCont:hover .image {
     opacity: 0.5;
 }
 
-.container:hover .middle {
+.cardCont:hover .middle {
     opacity: 1;
 }
