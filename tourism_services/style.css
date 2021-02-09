@@ -185,6 +185,53 @@ body {
 }
 
 
+.treatmentContainer {
+    /*background-color: #F0F8FF;*/
+    padding-top: 20px;
+    padding-bottom: 70px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.treatmentCardsContainer {
+    /*background-color: #F0F8FF;*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.treatmentButton {
+    background-color: #ff7043;
+    border: none;
+    color: white;
+    height: 85px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 20px;
+    /*margin: 10px;*/
+    border-radius: 25px;
+}
+
+.treatmentBtn {
+    opacity: 0.75;
+}
+
+.treatmentBtn:hover {
+    opacity: 1;
+}
+
 
 
 /* slide show */
