@@ -5,10 +5,18 @@ class User
 {
     private $userId;
     private $isLoggedIn;
-    function __construct($userId,$isLoggedIn)
+    private $type;
+    function __construct($userId,$isLoggedIn,$type)
     {
         $this->userId=$userId;
         $this->isLoggedIn=$isLoggedIn;
+        $this->type=$type;
+    }
+
+
+    public function getType()
+    {
+        return $this->type;
     }
 
 
@@ -44,7 +52,7 @@ class User
         }
     }
 
-    public function createUser($input){ /// input is array
+    public static function createUser($input){ /// input is array
         $username=databaseController::makeSafe($input["username"]);
         $email=databaseController::makeSafe($input["email"]);
         $password=password_hash(databaseController::makeSafe($input["password"]),PASSWORD_DEFAULT);
