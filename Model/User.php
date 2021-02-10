@@ -81,6 +81,49 @@ class User
     }
 
 
+    public static function hasUserWithUsername($username){
+        $query="SELECT * FROM `user` WHERE `username`=?";
+        $db=new databaseController();
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$username);
+        $statement->execute();
+        $result=$statement->get_result();
+        if($result->num_rows>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function hasUserWithEmail($email){
+        $query="SELECT * FROM `user` WHERE `email`=?";
+        $db=new databaseController();
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$email);
+        $statement->execute();
+        $result=$statement->get_result();
+        if($result->num_rows>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function hasUserWithPhoneNumber($phoneNumber){
+        $query="SELECT * FROM `user` WHERE `phoneNumber`=?";
+        $db=new databaseController();
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$phoneNumber);
+        $statement->execute();
+        $result=$statement->get_result();
+        if($result->num_rows>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 
 
 

@@ -19,14 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="کار های خفففففن!!!!">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="لاگین و رجیستر سمت بکند تمام شد!&#10;حال باید درخواست های سمت فرانت با ajax درست شود!">
+      <change afterPath="$PROJECT_DIR$/View/adminPanel/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/register/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/jquery-3.5.1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/authHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/authHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/databaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/databaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/mainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/mainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/adminPanel/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/adminPanel/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/register/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/register/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -74,7 +78,8 @@
       <option name="presentableId" value="Default" />
       <updated>1612891016191</updated>
       <workItem from="1612891034167" duration="9360000" />
-      <workItem from="1612940178094" duration="10641000" />
+      <workItem from="1612940178094" duration="12262000" />
+      <workItem from="1612968575195" duration="13321000" />
     </task>
     <task id="LOCAL-00001" summary="یه سری کارای مقدماتی">
       <created>1612899047273</created>
@@ -125,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612946319289</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="لاگین و رجیستر سمت بکند تمام شد!&#10;حال باید درخواست های سمت فرانت با ajax درست شود!">
+      <created>1612953177846</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612953177846</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +163,8 @@
     <MESSAGE value="یه سری کارای خفن در راهه!" />
     <MESSAGE value="jwt داره اضافه میشه!" />
     <MESSAGE value="کار های خفففففن!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="کار های خفففففن!!!!" />
+    <MESSAGE value="لاگین و رجیستر سمت بکند تمام شد!&#10;حال باید درخواست های سمت فرانت با ajax درست شود!" />
+    <option name="LAST_COMMIT_MESSAGE" value="لاگین و رجیستر سمت بکند تمام شد!&#10;حال باید درخواست های سمت فرانت با ajax درست شود!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="445" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1612943364003">
@@ -178,13 +191,13 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1612947102497" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1612946328676">
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1612953188945">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1612946328676" />
-    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612946323303">
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1612953188944" />
+    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612953491046">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1612946323303" />
+    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1612953491046" />
   </component>
 </project>

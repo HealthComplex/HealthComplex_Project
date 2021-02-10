@@ -25,9 +25,8 @@ class UserController
 
     private function registerUser(){
         $input = (array) json_decode(file_get_contents('php://input'), TRUE);
-        if($this->validateInputForRegister($input)==false){
-         return $this->createMessageToClient(403,"Forbidden","not allowed!");
-        }
+        $result=$this->checkValidation($input);
+        if($result!=true) return $result;
         User::createUser($input);
         return $this->createMessageToClient(201,"created","successfully created!");
     }
@@ -48,11 +47,21 @@ class UserController
 //        return unserialize($_SESSION["userObj"]);
 //    }
 
-    private function validateInputForRegister($input){
+    private function checkValidation($input){
         if(!isset($input["username"]) || !isset($input["password"]) || !isset($input["email"])||
             !isset($input["phoneNumber"]) || !isset($input["firstname"]) || !isset($input["lastname"])
     || !isset($input["city"]) || !isset($input["address"]) || !isset($input["countryCode"])){
-            return false;
+            return $this->createMessageToClient(403,"not allowed!","please complete inputs!");
+        }
+
+        if(User::hasUserWithUsername($input["username"])){
+            return $this->createMessageToClient(403,"invalid!","this username was registered in the system!");
+        }
+        if(User::hasUserWithPhoneNumber($input["phoneNumber"])){
+            return $this->createMessageToClient(403,"invalid!","this phoneNumber was registered in the system!");
+        }
+        if(User::hasUserWithEmail($input["email"])){
+            return $this->createMessageToClient(403,"invalid!","this email was registered in the system!");
         }
         return true;
     }

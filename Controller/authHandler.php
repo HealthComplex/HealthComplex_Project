@@ -26,6 +26,8 @@ class authHandler
         if($this->requestMethod=="GET"){
             $response=$this->validateToken();
         }
+        header($response["header"]);
+        echo json_encode($response["body"]);
     }
 
     public static function generateJwtTokenForUser(User $user){
