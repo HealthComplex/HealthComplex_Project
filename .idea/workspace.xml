@@ -19,15 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="jwt داره اضافه میشه!">
-      <change afterPath="$PROJECT_DIR$/View/adminPanel/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/userPanel/account.html" afterDir="false" />
+    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="کار های خفففففن!!!!">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/authHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/authHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/config/configurationAuth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/loginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/databaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/databaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/mainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/mainController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -73,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612891016191</updated>
       <workItem from="1612891034167" duration="9360000" />
-      <workItem from="1612940178094" duration="5097000" />
+      <workItem from="1612940178094" duration="10641000" />
     </task>
     <task id="LOCAL-00001" summary="یه سری کارای مقدماتی">
       <created>1612899047273</created>
@@ -117,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612942375233</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="کار های خفففففن!!!!">
+      <created>1612946319289</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612946319289</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +150,8 @@
     <MESSAGE value="sql injection is fixed!" />
     <MESSAGE value="یه سری کارای خفن در راهه!" />
     <MESSAGE value="jwt داره اضافه میشه!" />
-    <option name="LAST_COMMIT_MESSAGE" value="jwt داره اضافه میشه!" />
+    <MESSAGE value="کار های خفففففن!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="کار های خفففففن!!!!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="445" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1612943364003">
@@ -153,6 +162,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="370" y="239" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.984@0.0.1280.984" timestamp="1612946194928" />
+    <state x="420" y="247" key="FileChooserDialogImpl" timestamp="1612947079958">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1612947079958" />
     <state x="422" y="215" key="NewPhpClassDialog" timestamp="1612940745487">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -161,13 +174,17 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="474" y="415" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1612940784914" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1612942381757">
+    <state x="141" y="137" key="SettingsEditor" timestamp="1612947102497">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1612942381757" />
-    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612904420367">
+    <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1612947102497" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1612946328676">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1612904420367" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1612946328676" />
+    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612946323303">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1612946323303" />
   </component>
 </project>

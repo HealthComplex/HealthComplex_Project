@@ -5,7 +5,7 @@ class databaseController
 {
     private $username="alirezaeiji151379";
     private $password="alirezaeiji";
-    private $dbname="healthComplex";
+    private $dbname="health_complex";
     private $servername="localHost";
 
     private $connection=null;
