@@ -14,6 +14,8 @@
     <link type="text/css" rel="stylesheet" href="style.css"><link>
     <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
 <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
@@ -140,40 +142,187 @@
                             <input type="number" id="points" name="points" step="1" class="formInput" min="0" max="20" value="0" style="width: 40%;"><br>
                         </div>
                         <div class="col-auto my-6" style="margin-top:60px;">
-                            <button type="submit" class="btn btn-success" style="width:80%;">Add Tour</button>
+                            <button type="submit" class="addTourBtn btn btn-success" style="width:80%;" id="addTourButton">Add Tour</button>
+                            <script type="text/javascript">
+
+                                document.getElementById("addTourButton").addEventListener("click", insertAfter);
+
+                                function insertAfter() {
+                                    var newNode = document.createElement("span");
+                                    el.innerHTML = "test";
+                                    var referenceNode = document.getElementById("tourCardsContainer");
+                                    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+                                }
+
+
+                                // insertAfter(div, el);
+
+
+                                function addTour() {
+
+                                    document.getElementById("tourCardsContainer").insertBefore();
+                                }
+
+                                // $(document).ready(function(){
+                                //     console.log("1111")
+                                //     $(".addTourBtn").on("click",function(){
+                                //
+                                //         $("div:last").after("<div class=item><p>Title</p></div>");
+                                //        console.log("hiilkli")
+                                //     })
+                                //
+                                // })
+                            </script>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tourCardsContainer">
+                    <div class="listCard shadowBehind">
+                        <div>
+                            <div class="cardText">City</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">Tehran</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Tourism Services</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">1 Day Around City</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Num</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">3</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Expenses</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">200$</div>
+                        </div>
+
+                        <div class="trashBtnContainer">
+                            <input type="image" src="images/trash_icon.png" name="saveForm" class="btTxt submit trashBtn" id="saveForm" />
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="detailsTitle sadgan" style="padding-top: 100px;">
+                    <div>
+                        4- Choose ِYour Hotel to Stay:
+                    </div>
+                    <div>
+                        0 $
+                    </div>
+                </div>
+                <hr class="detailHorizontalRule">
+
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="margin-top: 20px; width: 60%;  border-radius: 7px; text-align: center; vertical-align: center; height: 35px;">
+                    <option style="width: 100%;" selected>Select City</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <div style="display: flex; justify-content: space-between; width: 80%; margin: auto; padding-top: 10px;">
+
+                    <div style="width: 48%;">
+                        <select class="form-select selectForm" aria-label="Default select example">
+                            <option selected>Select Hotel</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <div style="width: 48%;">
+                        <select class="form-select selectForm" aria-label="Default select example">
+                            <option selected>Select Your Room Plan</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div style="display: flex; justify-content: space-between; margin-top: 30px; width: 50%; margin-right: auto; margin-left: auto;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Breakfast
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Lunch
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Dinner
+                        </label>
+                    </div>
+                </div>
+
+
+                <div style="margin-top: 20px; margin-bottom: 30px;">
+                    <label for="points" class="formLabel">Number of Travellers</label><br>
+                    <div>
+                        <div style="width: 95%; padding-left: 20px;">
+                            <input type="number" id="points2" name="points" step="1" class="formInput" min="0" max="20" value="0" style="width: 40%;"><br>
+                        </div>
+                        <div class="col-auto my-6" style="margin-top:60px;">
+                            <button type="submit" class="addTourBtn btn btn-success" style="width:80%;">Add Hotel</button>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="listCard shadowBehind">
-                    <div>
-                        <div class="cardText">City</div>
-                        <hr class="detailHorizontalRule">
-                        <div class="cardText2">Tehran</div>
-                    </div>
-                    <div>
-                        <div class="cardText">Tourism Services</div>
-                        <hr class="detailHorizontalRule">
-                        <div class="cardText2">1 Day Around City</div>
-                    </div>
-                    <div>
-                        <div class="cardText">Num</div>
-                        <hr class="detailHorizontalRule">
-                        <div class="cardText2">3</div>
-                    </div>
-                    <div>
-                        <div class="cardText">Expenses</div>
-                        <hr class="detailHorizontalRule">
-                        <div class="cardText2">200$</div>
-                    </div>
 
-                    <div class="trashBtnContainer">
-                        <input type="image" src="images/trash_icon.png" name="saveForm" class="btTxt submit trashBtn" id="saveForm" />
+                <div class="detailsTitle sadgan" style="padding-top: 100px;">
+                    <div>
+                        5- Choose ِYour Transportation Methods:
+                    </div>
+                    <div>
+                        0 $
+                    </div>
+                </div>
+                <hr class="detailHorizontalRule">
+
+                <div style="display: flex; justify-content: space-between; width: 80%; margin: auto; padding-top: 10px; margin-top: 20px;" >
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Plane
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Train
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Bus
+                        </label>
                     </div>
                 </div>
 
-                <div class="form-floating" style="padding-top: 50px;">
+                <div class="form-check form-switch" style="margin-top: 25px;">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">VIP Service</label>
+                </div>
+
+
+
+
+                <div class="form-floating" style="padding-top: 65px;">
                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                     <label for="floatingTextarea2">Comments</label>
                 </div>
