@@ -28,20 +28,20 @@ class UserController
     }
 
 
-    public static function saveUserInSession($user){
-        if(session_status()==PHP_SESSION_NONE){
-            session_start();
-        }
-        $_SESSION["userObj"]=serialize($user);
-        return session_id();
-    }
-
-    public static function getUserFromSession(){
-        if(session_status()==PHP_SESSION_NONE){
-            session_start();
-        }
-        return unserialize($_SESSION["userObj"]);
-    }
+//    public static function saveUserInSession($user){
+//        if(session_status()==PHP_SESSION_NONE){
+//            session_start();
+//        }
+//        $_SESSION["userObj"]=serialize($user);
+//        return session_id();
+//    }
+//
+//    public static function getUserFromSession(){
+//        if(session_status()==PHP_SESSION_NONE){
+//            session_start();
+//        }
+//        return unserialize($_SESSION["userObj"]);
+//    }
 
     private function validateInputForRegister($input){
         if(!isset($input["username"]) || !isset($input["password"]) || !isset($input["email"])||
