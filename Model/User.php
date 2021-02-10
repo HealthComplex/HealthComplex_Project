@@ -4,13 +4,13 @@
 class User
 {
     private $userId;
-    private $isLoggedIn;
     private $type;
-    function __construct($userId,$isLoggedIn,$type)
+    private $enabled;
+    function __construct($userId,$type,$enabled)
     {
         $this->userId=$userId;
-        $this->isLoggedIn=$isLoggedIn;
         $this->type=$type;
+        $this->enabled=$enabled;
     }
 
 
@@ -25,15 +25,21 @@ class User
         return $this->userId;
     }
 
-    public function getIsLoggedIn()
+
+    public function getEnabled()
     {
-        return $this->isLoggedIn;
+        return $this->enabled;
     }
 
+
+
     public static function getUserById($id){
-        $query="SELECT * FROM `user` WHERE `user_id`=$id";
+        $query="SELECT * FROM `user` WHERE `user_id`=?";
         $db=new databaseController();
-        $result=$db->getConnection()->query($query);
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("i",$id);
+        $statement->execute();
+        $result=$statement->get_result();
         if($result->num_rows>0){
             return $result->fetch_assoc();
         }else{
@@ -42,9 +48,12 @@ class User
     }
 
     public static function getUserByUsername($username){
-        $query="SELECT * FROM `user` WHERE `username`=$username";
+        $query="SELECT `user_id`,`username`,`password`,`type`,`enabled` FROM `user` WHERE `username`=?";
         $db=new databaseController();
-        $result=$db->getConnection()->query($query);
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$username);
+        $statement->execute();
+        $result=$statement->get_result();
         if($result->num_rows>0){
             return $result->fetch_assoc();
         }else{

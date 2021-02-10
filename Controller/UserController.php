@@ -1,6 +1,8 @@
 <?php
 
-
+header("Content-Type: application/json; charset=UTF-8");
+require_once ("../Model/User.php");
+require_once ("databaseController.php");
 class UserController
 {
 
@@ -14,8 +16,11 @@ class UserController
 
     public function requestProcess(){
         if($this->requestMethod=="POST")
-            $this->registerUser();
+            $response=$this->registerUser();
 
+
+        header($response["header"]);
+        echo json_encode($response["body"]);
     }
 
     private function registerUser(){
@@ -28,20 +33,20 @@ class UserController
     }
 
 
-    public static function saveUserInSession($user){
-        if(session_status()==PHP_SESSION_NONE){
-            session_start();
-        }
-        $_SESSION["userObj"]=serialize($user);
-        return session_id();
-    }
-
-    public static function getUserFromSession(){
-        if(session_status()==PHP_SESSION_NONE){
-            session_start();
-        }
-        return unserialize($_SESSION["userObj"]);
-    }
+//    public static function saveUserInSession($user){
+//        if(session_status()==PHP_SESSION_NONE){
+//            session_start();
+//        }
+//        $_SESSION["userObj"]=serialize($user);
+//        return session_id();
+//    }
+//
+//    public static function getUserFromSession(){
+//        if(session_status()==PHP_SESSION_NONE){
+//            session_start();
+//        }
+//        return unserialize($_SESSION["userObj"]);
+//    }
 
     private function validateInputForRegister($input){
         if(!isset($input["username"]) || !isset($input["password"]) || !isset($input["email"])||
@@ -54,9 +59,8 @@ class UserController
 
     private function createMessageToClient($httpCode,$headerMessage,$body){
         $response["header"]="HTTP/1.1 ".$httpCode." ".$headerMessage;
-        header($response["header"]);
         $response["body"]=$body;
-        return json_encode($response["body"]);
+        return $response;
     }
 
 
