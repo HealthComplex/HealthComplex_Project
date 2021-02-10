@@ -10,7 +10,6 @@ function User(firstname,lastname,username,password,email,countryCode,city,addres
     this.phoneNumber=phoneNumber;
 }
 
-
 $('#myform').click(function () {
     let firstname=$("#firstname").val();
     let lastname=$("#lastname").val();
@@ -21,7 +20,6 @@ $('#myform').click(function () {
     let city=$("#inputCity").val();
     let address=$("#inputAddress").val();
     let phoneNumber=$("#phoneNumber").val();
-
     if(firstname=="" || lastname=="" || email=="" || username=="" || password=="" || city=="" || address=="" || phoneNumber==""){
         $("p").text("please fill all the inputs completely!")
         return
@@ -29,15 +27,13 @@ $('#myform').click(function () {
     let inputUser=new User(firstname,lastname,username,password,email,countryCode,city,address,phoneNumber);
     let jsonData=JSON.stringify(inputUser);
     $.post("http://localhost//HealthComplex_Project/Controller/mainController.php/User",
-        jsonData,
-        function (data,status,xhr) {
-            if(data=="successfully created!"){
-                window.location.replace("../login/index.html");
-            }else{
-                $("p").text(data);
-            }
-        },"json"
-    );
+        jsonData
+    ).fail(function (xhr, status, error) {
+        $("p").text(xhr.responseText)
+    }).done(function () {
+        window.location.replace("../login/index.html?registered=1");
+    });
+
 });
 
 
