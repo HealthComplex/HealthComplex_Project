@@ -1,6 +1,6 @@
 <?php
 
-
+header("Content-Type: application/json; charset=UTF-8");
 class UserController
 {
 
@@ -14,8 +14,11 @@ class UserController
 
     public function requestProcess(){
         if($this->requestMethod=="POST")
-            $this->registerUser();
+            $response=$this->registerUser();
 
+
+        header($response["header"]);
+        echo json_encode($response["body"]);
     }
 
     private function registerUser(){
@@ -54,9 +57,8 @@ class UserController
 
     private function createMessageToClient($httpCode,$headerMessage,$body){
         $response["header"]="HTTP/1.1 ".$httpCode." ".$headerMessage;
-        header($response["header"]);
         $response["body"]=$body;
-        return json_encode($response["body"]);
+        return $response;
     }
 
 

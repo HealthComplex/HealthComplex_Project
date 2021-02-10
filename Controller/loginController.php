@@ -1,14 +1,27 @@
 <?php
-
+header("Content-Type: application/json; charset=UTF-8");
+require_once ("../Model/User.php");
+require_once ("authHandler.php");
 
 class loginController
 {
     private $requestMethod;
-    function __construct()
+    function __construct($requestMethod)
     {
+        $this->requestMethod=$requestMethod;
     }
 
-    public  function login(){
+    public function requestProcess(){
+        if($this->requestMethod=="POST"){
+            $response=$this->login();
+        }
+
+
+        header($response["header"]);
+        echo json_encode($response["body"]);
+    }
+
+    private  function login(){
         $input = (array) json_decode(file_get_contents('php://input'), TRUE);
         if($this->validateLoginInput($input)==false){
             return $this->createMessageToClient(403,"Forbidden","not allowed!");
@@ -22,9 +35,10 @@ class loginController
         if(password_verify($password,$result["password"])==false){
             return  $this->createMessageToClient(403,"Forbidden","Not Allowed!");
         }
-        ///// continue generating jwt!
-
-
+        $user=new User($result["user_id"],$result["type"],$result["enabled"]);
+        $jwt=authHandler::generateJwtTokenForUser($user);
+        setcookie("token",$jwt);
+        return  $this->createMessageToClient(201,"created","login successful!");
     }
 
 
@@ -39,9 +53,8 @@ class loginController
 
     private function createMessageToClient($httpCode,$headerMessage,$body){
         $response["header"]="HTTP/1.1 ".$httpCode." ".$headerMessage;
-        header($response["header"]);
         $response["body"]=$body;
-        return json_encode($response["body"]);
+        return $response;
     }
 
 
