@@ -31,9 +31,12 @@ class User
     }
 
     public static function getUserById($id){
-        $query="SELECT * FROM `user` WHERE `user_id`=$id";
+        $query="SELECT * FROM `user` WHERE `user_id`=?";
         $db=new databaseController();
-        $result=$db->getConnection()->query($query);
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("i",$id);
+        $statement->execute();
+        $result=$statement->get_result();
         if($result->num_rows>0){
             return $result->fetch_assoc();
         }else{
@@ -42,9 +45,12 @@ class User
     }
 
     public static function getUserByUsername($username){
-        $query="SELECT * FROM `user` WHERE `username`=$username";
+        $query="SELECT * FROM `user` WHERE `username`=?";
         $db=new databaseController();
-        $result=$db->getConnection()->query($query);
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$username);
+        $statement->execute();
+        $result=$statement->get_result();
         if($result->num_rows>0){
             return $result->fetch_assoc();
         }else{
