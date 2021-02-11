@@ -20,10 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="کنترل ورود به صفحه ها درست شد!">
+      <change afterPath="$PROJECT_DIR$/Controller/authDB.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/authHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/authHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/adminPanel/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/adminPanel/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/trip_planning/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/trip_planning/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/loginController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -75,6 +75,7 @@
       <workItem from="1612940178094" duration="12262000" />
       <workItem from="1612968575195" duration="19680000" />
       <workItem from="1613035058712" duration="13606000" />
+      <workItem from="1613068564274" duration="4747000" />
     </task>
     <task id="LOCAL-00001" summary="یه سری کارای مقدماتی">
       <created>1612899047273</created>
@@ -206,18 +207,18 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1612947079958" />
-    <state x="422" y="215" key="NewPhpClassDialog" timestamp="1612940745487">
+    <state x="422" y="215" key="NewPhpClassDialog" timestamp="1613071836943">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="422" y="215" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1612940745487" />
+    <state x="422" y="215" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1613071836943" />
     <state x="474" y="415" key="NewPhpFileDialog" timestamp="1612940784914">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="474" y="415" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1612940784914" />
-    <state x="141" y="137" key="SettingsEditor" timestamp="1612947102497">
+    <state x="141" y="137" key="SettingsEditor" timestamp="1613075059540">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1612947102497" />
+    <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1613075059540" />
     <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1613042859864">
       <screen x="0" y="0" width="1280" height="984" />
     </state>

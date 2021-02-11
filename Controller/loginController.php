@@ -37,9 +37,10 @@ class loginController
             return  $this->createMessageToClient(403,"Forbidden","wrong username or password!");
         }
         $user=new User($result["user_id"],$result["type"],$result["enabled"]);
-        $jwt=authHandler::generateJwtTokenForUser($user);
-        setcookie("token",$jwt);
-        return  $this->createMessageToClient(201,"created","login successful!");
+        $token=authHandler::generateJwtAccessTokenForUser($user);
+        $refresh=authHandler::generateJwtRefreshTokenForUser($user);
+        setcookie("refreshToken",$refresh,null,null,null,false,true);/// needs to be changed!
+        return  $this->createMessageToClient(201,"created",$token);
     }
 
 

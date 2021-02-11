@@ -24,8 +24,10 @@ if(isset($uri[3])){
         $controller=new authHandler("GET","User");
         $controller->requestProcess();
     }
-
-
+    if($uri[3]=="refresh"){
+        $controller=new authHandler("GET",null,"1");
+        $controller->requestProcess();
+    }
 }else{
 
 }
