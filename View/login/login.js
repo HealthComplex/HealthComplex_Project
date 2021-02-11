@@ -12,7 +12,26 @@ $("#myform").click(function () {
     ).fail(function (xhr, status, error) {
         $("p").text(xhr.responseText)
     }).done(function () {
-        window.location.replace("../trip_planning/index.html");
+        let xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function () {
+            if(this.readyState==4){
+                if(this.status==200){
+                    window.location.replace("../adminPanel/account.html");
+                }
+            }
+        }
+        let xmlHttpRequest=new XMLHttpRequest()
+        xmlHttpRequest.onreadystatechange=function () {
+            if(this.readyState==4){
+                if(this.status==200){
+                    window.location.replace("../trip_planning/index.html");
+                }
+            }
+        }
+        xhttp.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",false);
+        xmlHttpRequest.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",false);
+        xhttp.send()
+        xmlHttpRequest.send()
     });
 
 

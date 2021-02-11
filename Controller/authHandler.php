@@ -15,8 +15,7 @@ class authHandler
 {
     private $requestMethod;
     private $expectedType;
-
-    function __construct($requestMethod,$expectedType)
+    function __construct($requestMethod,$expectedType=null)
     {
         $this->requestMethod=$requestMethod;
         $this->expectedType=$expectedType;

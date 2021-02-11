@@ -5,24 +5,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../libs/jquery-3.5.1.js"></script>
     <script>
-            $.ajax({
-                type: 'GET',
-                 dataType: 'json',
-                 url: "http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",
-                 async:false
-            }).done(
-                function(data, textStatus ){
-
-                }
-            ).fail(
-                function(xhr, textStatus, errorThrown){
+        let xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function () {
+            if(this.readyState==4){
+                if(this.status!=200){
                     window.location.replace("../../index.html");
                 }
-            )
+            }
+        }
+        xhttp.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",false);
+        xhttp.send()
     </script>
 </head>
 <body>
 reza is the man of focus!
 
+<script src="../../libs/jquery-3.5.1.js"></script>
 </body>
 </html>

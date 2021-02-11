@@ -19,13 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="رجیستر اوکی شد!">
-      <change afterPath="$PROJECT_DIR$/View/login/login.js" afterDir="false" />
+    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="لاگین و ورود به صفحه ادمین اوکی شد!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/authHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/authHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/loginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/adminPanel/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/adminPanel/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/adminPanel/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/View/adminPanel/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/View/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/register/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/register/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/trip_planning/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/trip_planning/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +78,7 @@
       <workItem from="1612891034167" duration="9360000" />
       <workItem from="1612940178094" duration="12262000" />
       <workItem from="1612968575195" duration="19680000" />
-      <workItem from="1613035058712" duration="6505000" />
+      <workItem from="1613035058712" duration="11398000" />
     </task>
     <task id="LOCAL-00001" summary="یه سری کارای مقدماتی">
       <created>1612899047273</created>
@@ -148,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612989257383</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="لاگین و ورود به صفحه ادمین اوکی شد!">
+      <created>1613042846098</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1613042846098</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +186,8 @@
     <MESSAGE value="لاگین و رجیستر سمت بکند تمام شد!&#10;حال باید درخواست های سمت فرانت با ajax درست شود!" />
     <MESSAGE value="رجیستر!" />
     <MESSAGE value="رجیستر اوکی شد!" />
-    <option name="LAST_COMMIT_MESSAGE" value="رجیستر اوکی شد!" />
+    <MESSAGE value="لاگین و ورود به صفحه ادمین اوکی شد!" />
+    <option name="LAST_COMMIT_MESSAGE" value="لاگین و ورود به صفحه ادمین اوکی شد!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="445" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1612943364003">
@@ -204,10 +214,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1612947102497" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1612953188945">
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1613042859864">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1612953188944" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1613042859864" />
     <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612953491046">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
