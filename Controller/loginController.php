@@ -12,6 +12,7 @@ class loginController
     }
 
     public function requestProcess(){
+        $response=null;
         if($this->requestMethod=="POST"){
             $response=$this->login();
         }
@@ -24,16 +25,16 @@ class loginController
     private  function login(){
         $input = (array) json_decode(file_get_contents('php://input'), TRUE);
         if($this->validateLoginInput($input)==false){
-            return $this->createMessageToClient(403,"Forbidden","not allowed!");
+            return $this->createMessageToClient(403,"Forbidden","wrong username or password!");
         }
         $username=$input["username"];
         $password=$input["password"];
         $result=User::getUserByUsername($username);
         if(is_array($result)==false){
-           return $this->createMessageToClient(404,"Not Found","User Not Found!");
+           return $this->createMessageToClient(404,"Not Found","wrong username or password!");
         }
         if(password_verify($password,$result["password"])==false){
-            return  $this->createMessageToClient(403,"Forbidden","Not Allowed!");
+            return  $this->createMessageToClient(403,"Forbidden","wrong username or password!");
         }
         $user=new User($result["user_id"],$result["type"],$result["enabled"]);
         $jwt=authHandler::generateJwtTokenForUser($user);

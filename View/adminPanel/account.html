@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../libs/jquery-3.5.1.js"></script>
+    <script>
+            $.ajax({
+                type: 'GET',
+                 dataType: 'json',
+                 url: "http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",
+                 async:false
+            }).done(
+                function(data, textStatus ){
+
+                }
+            ).fail(
+                function(xhr, textStatus, errorThrown){
+                    window.location.replace("../../index.html");
+                }
+            )
+    </script>
 </head>
 <body>
-<script>
-    var xhttp=new XMLHttpRequest();
-    xhttp.onreadystatechange=function () {
-        if(this.status==200 && this.readyState==4){
-           let data=JSON.parse(this.responseText)
-            alert(data)
-        }
-        alert(this.status)
-    }
-    xhttp.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",false);
-    xhttp.send();
-
-</script>
+reza is the man of focus!
 
 </body>
 </html>

@@ -23,6 +23,7 @@ class authHandler
     }
 
     public function requestProcess(){
+        $response=null;
         if($this->requestMethod=="GET"){
             $response=$this->validateToken();
         }
@@ -55,6 +56,7 @@ class authHandler
                 return $this->createMessageToClient(403,"Access denied!","forbidden!");
             }
             $result=User::getUserById($decoded->data->user_id);
+            echo $result["type"];
             if($result["type"]!=$this->expectedType){
                 return $this->createMessageToClient(403,"Access denied!" ,"forbidden");
             }
