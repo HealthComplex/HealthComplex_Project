@@ -5,12 +5,10 @@ class User
 {
     private $userId;
     private $type;
-    private $enabled;
-    function __construct($userId,$type,$enabled)
+    function __construct($userId,$type)
     {
         $this->userId=$userId;
         $this->type=$type;
-        $this->enabled=$enabled;
     }
 
 
@@ -23,12 +21,6 @@ class User
     public function getUserId()
     {
         return $this->userId;
-    }
-
-
-    public function getEnabled()
-    {
-        return $this->enabled;
     }
 
 
@@ -48,7 +40,7 @@ class User
     }
 
     public static function getUserByUsername($username){
-        $query="SELECT `user_id`,`username`,`password`,`type`,`enabled` FROM `user` WHERE `username`=?";
+        $query="SELECT `user_id`,`username`,`password`,`type` FROM `user` WHERE `username`=?";
         $db=new databaseController();
         $statement=$db->getConnection()->prepare($query);
         $statement->bind_param("s",$username);

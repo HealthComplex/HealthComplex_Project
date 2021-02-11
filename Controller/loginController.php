@@ -36,15 +36,12 @@ class loginController
         if(password_verify($password,$result["password"])==false){
             return  $this->createMessageToClient(403,"Forbidden","wrong username or password!");
         }
-        $user=new User($result["user_id"],$result["type"],$result["enabled"]);
+        $user=new User($result["user_id"],$result["type"]);
         $token=authHandler::generateJwtAccessTokenForUser($user);
         $refresh=authHandler::generateJwtRefreshTokenForUser($user);
         setcookie("refreshToken",$refresh,null,null,null,false,true);/// needs to be changed!
         return  $this->createMessageToClient(201,"created",$token);
     }
-
-
-
 
     private function validateLoginInput($input){
         if(!isset($input["username"]) || !isset($input["password"])){

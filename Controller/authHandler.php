@@ -1,5 +1,5 @@
 <?php
-
+require_once ("authDB.php");
 require_once ('../libs/php-jwt-master/src/BeforeValidException.php');
 require_once ('../libs/php-jwt-master/src/ExpiredException.php');
 require_once ('../libs/php-jwt-master/src/SignatureInvalidException.php');
@@ -16,21 +16,18 @@ class authHandler
     private $requestMethod;
     private $expectedType;
     private $mode;
-    function __construct($requestMethod,$expectedType=null,$mode=null)
+    function __construct($requestMethod,$expectedType=null)
     {
         $this->requestMethod=$requestMethod;
         $this->expectedType=$expectedType;
-        $this->mode=$mode;
     }
 
     public function requestProcess(){
         $response=null;
-        if($this->requestMethod=="GET" && $this->mode==null){
+        if($this->requestMethod=="GET"){
             $response=$this->validateToken();
         }
-        if($this->requestMethod=="GET" && $this->mode!=null){
-            $response=$this->refreshAccessToken();
-        }
+
         header($response["header"]);
         echo json_encode($response["body"]);
     }
@@ -89,19 +86,21 @@ class authHandler
 
     private function validateToken(){
         $token=$this->getBearerToken();
+        $toBeSent="access granted!";
         if(is_null($token)){
             return $this->createMessageToClient("403","Access denied!","forbidden");
         }
         try {
             $decoded = JWT::decode($token, keys, array('HS256'));
             if((time()-$decoded->expire)>900){
-               return $this->createMessageToClient(403,"Access denied!","token Expired!");
+                $toBeSent=$this->refreshAccessToken();
+               //return $this->createMessageToClient(403,"Access denied!","token Expired!");
             }
             $result=User::getUserById($decoded->data->user_id);
             if($result["type"]!=$this->expectedType){
                return $this->createMessageToClient(403,"Access denied!" ,"forbidden");
             }
-            return $this->createMessageToClient(200,"ok","access granted!");
+            return $this->createMessageToClient(200,"ok",$toBeSent);
         }catch (Exception $e){
             return $this->createMessageToClient(403,"Access denied!","forbidden!");
         }
