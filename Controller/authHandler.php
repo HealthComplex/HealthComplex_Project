@@ -32,7 +32,7 @@ class authHandler
 
     public static function generateJwtTokenForUser(User $user){
         $issued_at = time();
-        $expiration_time = $issued_at + (604800);
+        $expiration_time = $issued_at + (640800);
         $payload=array(
             "start"=>$issued_at,
             "expire"=>$expiration_time,

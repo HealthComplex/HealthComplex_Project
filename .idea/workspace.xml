@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="لاگین و ورود به صفحه ادمین اوکی شد!">
+    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="کنترل ورود به صفحه ها درست شد!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/authHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/authHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/adminPanel/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/adminPanel/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/adminPanel/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/View/adminPanel/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/login/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/View/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/register/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/register/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/trip_planning/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/trip_planning/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +74,7 @@
       <workItem from="1612891034167" duration="9360000" />
       <workItem from="1612940178094" duration="12262000" />
       <workItem from="1612968575195" duration="19680000" />
-      <workItem from="1613035058712" duration="11398000" />
+      <workItem from="1613035058712" duration="13606000" />
     </task>
     <task id="LOCAL-00001" summary="یه سری کارای مقدماتی">
       <created>1612899047273</created>
@@ -157,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613042846098</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="کنترل ورود به صفحه ها درست شد!">
+      <created>1613048139319</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1613048139319</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +190,8 @@
     <MESSAGE value="رجیستر!" />
     <MESSAGE value="رجیستر اوکی شد!" />
     <MESSAGE value="لاگین و ورود به صفحه ادمین اوکی شد!" />
-    <option name="LAST_COMMIT_MESSAGE" value="لاگین و ورود به صفحه ادمین اوکی شد!" />
+    <MESSAGE value="کنترل ورود به صفحه ها درست شد!" />
+    <option name="LAST_COMMIT_MESSAGE" value="کنترل ورود به صفحه ها درست شد!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="445" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1612943364003">
