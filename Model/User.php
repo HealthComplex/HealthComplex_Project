@@ -5,12 +5,10 @@ class User
 {
     private $userId;
     private $type;
-    private $enabled;
-    function __construct($userId,$type,$enabled)
+    function __construct($userId,$type)
     {
         $this->userId=$userId;
         $this->type=$type;
-        $this->enabled=$enabled;
     }
 
 
@@ -23,12 +21,6 @@ class User
     public function getUserId()
     {
         return $this->userId;
-    }
-
-
-    public function getEnabled()
-    {
-        return $this->enabled;
     }
 
 
@@ -48,7 +40,7 @@ class User
     }
 
     public static function getUserByUsername($username){
-        $query="SELECT `user_id`,`username`,`password`,`type`,`enabled` FROM `user` WHERE `username`=?";
+        $query="SELECT `user_id`,`username`,`password`,`type` FROM `user` WHERE `username`=?";
         $db=new databaseController();
         $statement=$db->getConnection()->prepare($query);
         $statement->bind_param("s",$username);
@@ -78,6 +70,49 @@ class User
         $statement=$db->getConnection()->prepare($query);
         $statement->bind_param("sssssssss",$username,$email,$password,$firstname,$lastname,$countryCode,$phoneNumber,$city,$address);
         $statement->execute();
+    }
+
+
+    public static function hasUserWithUsername($username){
+        $query="SELECT * FROM `user` WHERE `username`=?";
+        $db=new databaseController();
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$username);
+        $statement->execute();
+        $result=$statement->get_result();
+        if($result->num_rows>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function hasUserWithEmail($email){
+        $query="SELECT * FROM `user` WHERE `email`=?";
+        $db=new databaseController();
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$email);
+        $statement->execute();
+        $result=$statement->get_result();
+        if($result->num_rows>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function hasUserWithPhoneNumber($phoneNumber){
+        $query="SELECT * FROM `user` WHERE `phoneNumber`=?";
+        $db=new databaseController();
+        $statement=$db->getConnection()->prepare($query);
+        $statement->bind_param("s",$phoneNumber);
+        $statement->execute();
+        $result=$statement->get_result();
+        if($result->num_rows>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 

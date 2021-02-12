@@ -4,7 +4,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-	    <title>Health Complex|login</title>
 	    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
 	    <link type="text/css" rel="stylesheet" href="style.css"><link>
 	    
@@ -14,6 +13,31 @@
 	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="../../libs/jquery-3.5.1.js"></script>
+        <script>
+            // let xhttp=new XMLHttpRequest();
+            // xhttp.onreadystatechange=function () {
+            //     if(this.readyState==4){
+            //         if(this.status==200){
+            //             window.location.replace("../adminPanel/account.html");
+            //         }
+            //     }
+            // }
+            // let xmlHttpRequest=new XMLHttpRequest()
+            // xmlHttpRequest.onreadystatechange=function () {
+            //     if(this.readyState==4){
+            //         if(this.status==200){
+            //             window.location.replace("../trip_planning/index.html");
+            //         }
+            //     }
+            // }
+            //
+            // xhttp.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",false);
+            // xmlHttpRequest.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",false);
+            // xhttp.send()
+            // xmlHttpRequest.send()
+        </script>
+        <title>Health Complex|login</title>
     </head>
     
     <body>
@@ -26,6 +50,7 @@
         
         
                 <div class="aboutBody iranSans" style="padding-top:40px; margin-right:5%; margin-left:5%;">
+                    <p style="color:red"></p>
                     <form>
                        
                         <div class="form-group row" style="margin-top:25px;">
@@ -42,7 +67,7 @@
                         </div>
   
                         <div class="col-auto my-10" style="margin-top:60px;">
-                            <button type="submit" class="btn btn-primary" style="width:80%;">Submit</button>
+                            <button type="button" class="btn btn-primary" id="myform" style="width:80%;">Submit</button>
                         </div>
 
                         <div>
@@ -53,5 +78,25 @@
                 </div>
             </div>
         </div>
+        <script src="../../libs/jquery-3.5.1.js"></script>
+        <script>
+            function getUrlVars()
+            {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for(var i = 0; i < hashes.length; i++)
+                {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+            if("registered" in getUrlVars()){
+                $("p").text("you have been registered successfully!");
+            }
+        </script>
+    <script src="login.js"></script>
+
     </body>
 </html>

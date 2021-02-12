@@ -19,14 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="کار های خفففففن!!!!">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="fe782301-55fd-461c-a9e6-18539082afc6" name="Default Changelist" comment="سمت بک یه سری چیز درست شد!">
+      <change afterPath="$PROJECT_DIR$/View/request.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/authHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/authHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/databaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/databaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/loginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/mainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/mainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/adminPanel/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/adminPanel/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/View/login/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -61,7 +64,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -74,7 +77,10 @@
       <option name="presentableId" value="Default" />
       <updated>1612891016191</updated>
       <workItem from="1612891034167" duration="9360000" />
-      <workItem from="1612940178094" duration="10641000" />
+      <workItem from="1612940178094" duration="12262000" />
+      <workItem from="1612968575195" duration="19680000" />
+      <workItem from="1613035058712" duration="13606000" />
+      <workItem from="1613068564274" duration="7630000" />
     </task>
     <task id="LOCAL-00001" summary="یه سری کارای مقدماتی">
       <created>1612899047273</created>
@@ -125,7 +131,49 @@
       <option name="project" value="LOCAL" />
       <updated>1612946319289</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="لاگین و رجیستر سمت بکند تمام شد!&#10;حال باید درخواست های سمت فرانت با ajax درست شود!">
+      <created>1612953177846</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612953177846</updated>
+    </task>
+    <task id="LOCAL-00009" summary="رجیستر!">
+      <created>1612984223170</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612984223170</updated>
+    </task>
+    <task id="LOCAL-00010" summary="رجیستر اوکی شد!">
+      <created>1612989257383</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612989257383</updated>
+    </task>
+    <task id="LOCAL-00011" summary="لاگین و ورود به صفحه ادمین اوکی شد!">
+      <created>1613042846098</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1613042846098</updated>
+    </task>
+    <task id="LOCAL-00012" summary="کنترل ورود به صفحه ها درست شد!">
+      <created>1613048139319</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1613048139319</updated>
+    </task>
+    <task id="LOCAL-00013" summary="سمت بک یه سری چیز درست شد!">
+      <created>1613075791291</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1613075791291</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +199,13 @@
     <MESSAGE value="یه سری کارای خفن در راهه!" />
     <MESSAGE value="jwt داره اضافه میشه!" />
     <MESSAGE value="کار های خفففففن!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="کار های خفففففن!!!!" />
+    <MESSAGE value="لاگین و رجیستر سمت بکند تمام شد!&#10;حال باید درخواست های سمت فرانت با ajax درست شود!" />
+    <MESSAGE value="رجیستر!" />
+    <MESSAGE value="رجیستر اوکی شد!" />
+    <MESSAGE value="لاگین و ورود به صفحه ادمین اوکی شد!" />
+    <MESSAGE value="کنترل ورود به صفحه ها درست شد!" />
+    <MESSAGE value="سمت بک یه سری چیز درست شد!" />
+    <option name="LAST_COMMIT_MESSAGE" value="سمت بک یه سری چیز درست شد!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="445" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1612943364003">
@@ -166,25 +220,25 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1612947079958" />
-    <state x="422" y="215" key="NewPhpClassDialog" timestamp="1612940745487">
+    <state x="422" y="215" key="NewPhpClassDialog" timestamp="1613071836943">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="422" y="215" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1612940745487" />
+    <state x="422" y="215" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1613071836943" />
     <state x="474" y="415" key="NewPhpFileDialog" timestamp="1612940784914">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="474" y="415" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1612940784914" />
-    <state x="141" y="137" key="SettingsEditor" timestamp="1612947102497">
+    <state x="141" y="137" key="SettingsEditor" timestamp="1613075059540">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1612947102497" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1612946328676">
+    <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1613075059540" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1613075810267">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1612946328676" />
-    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612946323303">
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1613075810267" />
+    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613075797684">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1612946323303" />
+    <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1613075797684" />
   </component>
 </project>

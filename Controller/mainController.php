@@ -13,12 +13,21 @@ if(isset($uri[3])){
         $controller->requestProcess();
     }
     if($uri[3]=="User"){
-
         $controller=new UserController($requestedMethod);
         $controller->requestProcess();
     }
-
-
+    if($uri[3]=="authAdmin"){
+        $controller=new authHandler("GET","Admin");
+        $controller->requestProcess();
+    }
+    if($uri[3]=="authUser"){
+        $controller=new authHandler("GET","User");
+        $controller->requestProcess();
+    }
+    if($uri[3]=="refresh"){
+        $controller=new authHandler("GET",null);
+        $controller->requestProcess();
+    }
 }else{
 
 }
