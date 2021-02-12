@@ -16,17 +16,13 @@
 <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
     <script src="../../libs/jquery-3.5.1.js"></script>
+    <script src="../request.js"></script>
     <script>
-        let xmlHttpRequest=new XMLHttpRequest()
-        xmlHttpRequest.onreadystatechange=function () {
-            if(this.readyState==4){
-                if(this.status!=200){
-                    window.location.replace("../login/index.html");
-                }
-            }
+        data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",null);
+        if(data==="login"){
+            window.location.replace("../login/index.html");
         }
-        xmlHttpRequest.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",false);
-        xmlHttpRequest.send()
+        if(data!="ok") window.location.replace("../../index.html");
     </script>
 
     <title>Plan Your Trip</title>
