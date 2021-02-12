@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Complex|Plan Your Trip</title>
+
+    <!-- ‌‌ BootStrap  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="../style.css"><link>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
+
+    <title>Plan Your Trip</title>
+</head>
+<body>
+<div class="backgroundImage">
+
+    <div class="aboutUsContainer">
+        <div class="aboutTitle sadgan">Plan Your Trip!
+            <hr class="horizontalRule">
+        </div>
+
+
+        <div class="aboutBody iranSans" style="padding-top:0px; margin-right:5%; margin-left:5%;">
+            <form>
+
+                <div class="detailsTitle sadgan" style="padding-top: 50px;">
+                    <div>
+                        3- Choose ِYour Tourism Services:
+                    </div>
+                    <div>
+                        0 $
+                    </div>
+                </div>
+                <hr class="detailHorizontalRule">
+
+                <div style="display: flex; justify-content: space-between; width: 80%; margin: auto; padding-top: 10px;">
+
+                    <div style="width: 48%;">
+                        <select class="form-select selectForm" aria-label="Default select example">
+                            <option selected>Select Tourism Service City</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <div style="width: 48%;">
+                        <select class="form-select selectForm" aria-label="Default select example">
+                            <option selected>Select Tourism Service</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; margin-bottom: 30px;">
+                    <label for="points" class="formLabel">Number of Travellers</label><br>
+                    <div>
+                        <div style="width: 95%; padding-left: 20px;">
+                            <input type="number" id="points" name="points" step="1" class="formInput" min="0" max="20" value="0" style="width: 40%;"><br>
+                        </div>
+                        <div class="col-auto my-6" style="margin-top:60px;">
+                            <button  class="addTourBtn btn btn-success" style="width:80%;" onclick="addTourButton()">Add Tour</button>
+                            <script>
+
+                                function addTourButton() {
+                                    console.log("add tour clicked")
+                                }
+                            </script>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tourCardsContainer" style="padding-top: 40px;">
+                    <div class="listCard shadowBehind">
+                        <div>
+                            <div class="cardText">City</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">Tehran</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Tourism Services</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">1 Day Around City</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Num</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">3</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Expenses</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">200$</div>
+                        </div>
+
+                        <div class="trashBtnContainer">
+                            <input type="image" src="images/trash_icon.png" name="saveForm" class="btTxt trashBtn" id="saveForm" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="margin-top: 80px;  width: 80%; margin-right: auto; margin-left: auto;">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
+                    </div>
+
+                    <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+                        <input  class="btn btn-primary" style="width:100px; height: 45px; border-bottom-left-radius: 15px; border-top-left-radius: 15px;" onclick="location.href = '../Step_2/index.html';" value="Back">
+                        <div style="margin-bottom: 25px;">Step 3/5</div>
+                        <input  class="btn btn-primary" style="width:100px; height: 45px; border-bottom-right-radius: 15px; border-top-right-radius: 15px;" onclick="location.href = '../Step_4/index.html';" value="Next">
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!--        <img src="images/tehran_header.png" style="width: 100%; height: 200px; bottom: 0;"/>-->
+    </div>
+
+
+</div>
+</body>
+
+</html>
