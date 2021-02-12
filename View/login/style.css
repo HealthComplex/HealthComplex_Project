@@ -33,13 +33,13 @@
     text-align: center;
     padding-top: 30px;
     padding-bottom: 80px;
-    min-height: 100%;
+    min-height: 120%;
 }
 
 .backgroundImage {
     width: 100%;
     height: auto;
-    min-height: 100%;
+    min-height: 120%;
     background-image: url('images/takhte_jamshid_background.jpg');
     background-size: 100% 100%;
     opacity: 0.7;
@@ -76,7 +76,7 @@
     line-height: 1.65;
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1300px) {
     .aboutUsContainer {
         width: 80%;
         margin-right: 10%;

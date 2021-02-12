@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
+    <link type="text/css" rel="stylesheet" href="style.css"><link>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Boostrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../../libs/jquery-3.5.1.js"></script>
+    <script src="../request.js"></script>
+    <script>
+        data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",null);
+        if(data=="ok"){window.location.replace("../trip_planning/index.html")}
+        data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",null);
+        if(data=="ok")window.location.replace("../adminPanel/account.html");
+    </script>
+    <title>Health Complex|Contact Us</title>
+</head>
+<body>
+<div class="backgroundImage">
+
+    <div class="aboutUsContainer">
+        <div class="aboutTitle sadgan">Conatct Us
+            <hr class="horizontalRule">
+        </div>
+
+
+        <div class="aboutBody iranSans" style="padding-top:40px; margin-right:5%; margin-left:5%;">
+            <p style="color:red"></p>
+
+            <div>
+                <div class="contactContainer">
+
+                    <div class="contactWaysContainer">
+                        <div style="text-align: center;"><img src="../images/email.png" style="width: 65px; height: 46px;"><h5 style="padding-top: 14px; text-align: center;">Email</h5>
+                        </div>
+
+                        <div style="text-align: center;"><img src="../images/linkedin.png" style="width: 50px; height: 49px;"><h5 style="padding-top: 14px; text-align: center;">Linkedin</h5>
+                        </div>
+
+                        <div style="text-align: center;"><img src="../images/instagram.png" style="width: 50px; height: 50px;"><h5 style="padding-top: 14px; text-align: center;">Instagram</h5>
+                        </div>
+                    </div>
+
+                    <div class="maps">
+                        <div class="contactWaysContainer" style="padding-top: 55px;">
+                            <div>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9190608373096!2d51.35371968448909!3d35.70360933635128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00a8bc1a7e63%3A0x61a5a909b878501!2z2K_Yp9mG2LTar9in2Ycg2LXZhti52KrbjCDYtNix24zZgQ!5e0!3m2!1sfa!2sus!4v1596370682701!5m2!1sfa!2sus"
+                                        width="350" height="280" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                <p class="roboto">Health Complex<br>
+                                    District 2, Tehran Province, Iran<br>Phone: </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+<script src="../../libs/jquery-3.5.1.js"></script>
+<script>
+    function getUrlVars()
+    {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    if("registered" in getUrlVars()){
+        $("p").text("you have been registered successfully!");
+    }
+</script>
+<script src="login.js"></script>
+
+</body>
+</html>

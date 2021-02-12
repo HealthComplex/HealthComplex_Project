@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
+    <link type="text/css" rel="stylesheet" href="style.css"><link>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Boostrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../../libs/jquery-3.5.1.js"></script>
+    <script src="../request.js"></script>
+    <script>
+        data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",null);
+        if(data=="ok"){window.location.replace("../trip_planning/index.html")}
+        data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",null);
+        if(data=="ok")window.location.replace("../adminPanel/account.html");
+    </script>
+    <title>Health Complex|About Us</title>
+</head>
+<body>
+<div class="backgroundImage">
+
+    <div class="aboutUsContainer">
+        <div class="aboutTitle sadgan">About Us
+            <hr class="horizontalRule">
+        </div>
+
+
+        <div class="aboutBody iranSans" style="padding-top:40px; margin-right:5%; margin-left:5%;">
+            <p style="color:red"></p>
+
+            <div>
+                the best services are presented at our Health Tourist Complex.<br>
+                Medical tourism refers to people traveling abroad to obtain medical treatment.<br>
+                In the past, this usually referred to those who traveled from less-developed countries to major medical centers in highly developed countries for treatment unavailable at home.<br>
+                However, in recent years it may equally refer to those from developed countries who travel to developing countries for lower-priced medical treatments.<br>
+                The motivation may be also for medical services unavailable or non-licensed in the home country: There are differences between the medical agencies (FDA, EMA etc.) world-wide, whether a drug is approved in their country or not.<br> Even within Europe, although therapy protocols might be approved by the European Medical Agency (EMA), several countries have their own review organizations (i.e. NICE by the NHS) in order to evaluate whether the same therapy protocol would be "cost-effective", so that patients face differences in the therapy protocols, particularly in the access of these drugs, which might be partially explained by the financial strength of the particular Health System.</div>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="../../libs/jquery-3.5.1.js"></script>
+<script>
+    function getUrlVars()
+    {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    if("registered" in getUrlVars()){
+        $("p").text("you have been registered successfully!");
+    }
+</script>
+<script src="login.js"></script>
+
+</body>
+</html>

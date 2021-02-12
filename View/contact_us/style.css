@@ -40,7 +40,7 @@
     width: 100%;
     min-height: 100%;
     height: auto;
-    background-image: url('images/azadi_background.jpg');
+    background-image: url("./images/siose_pol_background.jpg");
     background-size: 100% 100%;
     opacity: 0.7;
     padding-top: 10px;
@@ -74,6 +74,23 @@
     padding-top: 30px;
     font-size: 18px;
     line-height: 1.65;
+}
+
+.contactContainer {
+    /*background-color: #F0F8FF;*/
+    padding-top: 38px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+}
+
+.contactWaysContainer {
+    padding-top: 4px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 @media only screen and (max-width: 1300px) {
