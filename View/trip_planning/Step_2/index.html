@@ -40,8 +40,8 @@
                 </div>
                 <hr class="detailHorizontalRule">
 
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="margin-top: 20px; width: 60%;  border-radius: 7px; text-align: center; vertical-align: center; height: 35px;">
-                    <option style="width: 100%;" selected>Select Medical Service City</option>
+                <select id="citySelector" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="margin-top: 20px; width: 60%;  border-radius: 7px; text-align: center; vertical-align: center; height: 35px;">
+                    <option value="default" style="width: 100%;" selected>Select Medical Service City</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -49,8 +49,8 @@
                 <div style="display: flex; justify-content: space-between; width: 80%; margin: auto; padding-top: 10px;">
 
                     <div style="width: 48%;">
-                        <select class="form-select selectForm" aria-label="Default select example">
-                            <option selected>Select Hospital</option>
+                        <select id="hospitalSelector" class="form-select selectForm" aria-label="Default select example">
+                            <option value="default" selected>Select Hospital</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -58,8 +58,8 @@
                     </div>
 
                     <div style="width: 48%;">
-                        <select class="form-select selectForm" aria-label="Default select example">
-                            <option selected>Select Medical Service</option>
+                        <select id="medicalSelector" class="form-select selectForm" aria-label="Default select example">
+                            <option value="default" selected>Select Medical Service</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -68,12 +68,59 @@
                 </div>
 
                 <div class="col-auto my-6" style="margin-top:60px;">
-                    <button  class="addTourBtn btn btn-success" style="width:80%;" onclick="addMedicalServiceButton()">Add Medical Service</button>
+                    <input type="button" class="addTourBtn btn btn-success" style="width:80%;" onclick="addMedicalServiceButton()" value="Add Medical Service">
                     <script>
 
                         function addMedicalServiceButton() {
                             console.log("add medical service clicked")
+                            var container = document.getElementById("medicalCardsContainer")
+
+                            var city = document.getElementById("citySelector").value
+                            var hospital = document.getElementById("hospitalSelector").value
+                            var medical = document.getElementById("medicalSelector").value
+                            var cost = 100
+
+                            if (city==='default' || hospital==='default' || medical==='default') {
+                                return null
+                            }
+                            var card = document.createElement("div")
+                            card.innerHTML = ` <div id="medicalCardsContainer" style="padding-top: 40px;">
+                    <div class="listCard shadowBehind">
+                        <div>
+                            <div class="cardText">City</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">Tehran</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Hospital</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">Erfan Hospital</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Medical Services</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">Cancer Treatment</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Expenses</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">800$</div>
+                        </div>
+
+                        <div class="trashBtnContainer">
+                            <input type="button" class="btTxt trashBtn" onclick="removeMedicalServiceButton(this)">
+                </div>
+        </div>
+    </div> `
+                            container.appendChild(card)
                         }
+
+                        document.getElementsByClassName("trashBtn").addEventListener("click", function() {
+                            par = elem.parentNode.parentNode
+                            par.remove()
+                            console.log("remove")
+                        });
+
                     </script>
                 </div>
 
@@ -101,7 +148,14 @@
                         </div>
 
                         <div class="trashBtnContainer">
-                            <input type="image" src="../images/trash_icon.png" class="btTxt trashBtn"/>
+                            <input type="button" class="btTxt trashBtn" onclick="removeMedicalServiceButton(this)">
+                            <script>
+                                function removeMedicalServiceButton(elem) {
+                                    par = elem.parentNode.parentNode
+                                    par.remove()
+                                    console.log("remove")
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>

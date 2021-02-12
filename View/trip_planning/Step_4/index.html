@@ -39,8 +39,8 @@
                 </div>
                 <hr class="detailHorizontalRule">
 
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="margin-top: 20px; width: 60%;  border-radius: 7px; text-align: center; vertical-align: center; height: 35px;">
-                    <option style="width: 100%;" selected>Select City</option>
+                <select id="citySelector" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="margin-top: 20px; width: 60%;  border-radius: 7px; text-align: center; vertical-align: center; height: 35px;">
+                    <option value="default" style="width: 100%;" selected>Select City</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -48,8 +48,8 @@
                 <div style="display: flex; justify-content: space-between; width: 80%; margin: auto; padding-top: 10px;">
 
                     <div style="width: 48%;">
-                        <select class="form-select selectForm" aria-label="Default select example">
-                            <option selected>Select Hotel</option>
+                        <select id="hotelSelector" class="form-select selectForm" aria-label="Default select example">
+                            <option value="default" selected>Select Hotel</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -57,8 +57,8 @@
                     </div>
 
                     <div style="width: 48%;">
-                        <select class="form-select selectForm" aria-label="Default select example">
-                            <option selected>Select Your Room Plan</option>
+                        <select id="roomSelector" class="form-select selectForm" aria-label="Default select example">
+                            <option value="default" selected>Select Your Room Plan</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -90,18 +90,64 @@
 
 
                 <div style="margin-top: 20px; margin-bottom: 30px;">
-                    <label for="points2" class="formLabel">Number of Travellers</label><br>
+                    <label for="points" class="formLabel">Number of Travellers</label><br>
                     <div>
                         <div style="width: 95%; padding-left: 20px;">
-                            <input type="number" id="points2" name="points" step="1" class="formInput" min="0" max="20" value="0" style="width: 40%;"><br>
+                            <input type="number" id="points" name="points" step="1" class="formInput" min="0" max="20" value="0" style="width: 40%;"><br>
                         </div>
                         <div class="col-auto my-6" style="margin-top:60px;">
-                            <button  class="addTourBtn btn btn-success" style="width:80%;" onclick="addHotelButton()">Add Hotel</button>
+                            <input type="button" class="addTourBtn btn btn-success" style="width:80%;" onclick="addHotelButton()" value="Add Hotel">
                             <script>
 
                                 function addHotelButton() {
                                     console.log("add hotel clicked")
+                                    var container = document.getElementById("hotelCardsContainer")
+
+                                    var city = document.getElementById("citySelector").value
+                                    var hotel = document.getElementById("hotelSelector").value
+                                    var room = document.getElementById("roomSelector").value
+                                    var num = document.getElementById("points").value
+                                    var cost = 100
+
+                                    if (city==='default' || hotel==='default' || room==='default') {
+                                        return null
+                                    }
+                                    var card = document.createElement("div")
+                                    card.innerHTML = ` <div class="listCard shadowBehind">
+                        <div>
+                            <div class="cardText">City</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${city}</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Hotel</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${hotel}</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Room PLan</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${room}</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Expenses</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${cost} $</div>
+                        </div>
+
+                        <div class="trashBtnContainer">
+                            <input type="button" class="btTxt trashBtn" onclick="removeHotelButton(this)">
+                        </div>
+                    </div> `
+                                    container.appendChild(card)
                                 }
+
+                                document.getElementsByClassName("trashBtn").addEventListener("click", function() {
+                                    par = elem.parentNode.parentNode
+                                    par.remove()
+                                    console.log("remove")
+                                });
+
                             </script>
                         </div>
                     </div>
@@ -134,7 +180,14 @@
                         </div>
 
                         <div class="trashBtnContainer">
-                            <input type="image" src="../images/trash_icon.png" class="btTxt trashBtn"/>
+                            <input type="button" class="btTxt trashBtn" onclick="removeHotelButton(this)">
+                            <script>
+                                function removeHotelButton(elem) {
+                                    par = elem.parentNode.parentNode
+                                    par.remove()
+                                    console.log("remove")
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>

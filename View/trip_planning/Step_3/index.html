@@ -41,8 +41,8 @@
                 <div style="display: flex; justify-content: space-between; width: 80%; margin: auto; padding-top: 10px;">
 
                     <div style="width: 48%;">
-                        <select class="form-select selectForm" aria-label="Default select example">
-                            <option selected>Select Tourism Service City</option>
+                        <select id="citySelector" class="form-select selectForm" aria-label="Default select example">
+                            <option value="default" selected>Select Tourism Service City</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -50,8 +50,8 @@
                     </div>
 
                     <div style="width: 48%;">
-                        <select class="form-select selectForm" aria-label="Default select example">
-                            <option selected>Select Tourism Service</option>
+                        <select id="tourismSelector" class="form-select selectForm" aria-label="Default select example">
+                            <option value="default" selected>Select Tourism Service</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -66,12 +66,57 @@
                             <input type="number" id="points" name="points" step="1" class="formInput" min="0" max="20" value="0" style="width: 40%;"><br>
                         </div>
                         <div class="col-auto my-6" style="margin-top:60px;">
-                            <button  class="addTourBtn btn btn-success" style="width:80%;" onclick="addTourButton()">Add Tour</button>
+                            <input type="button" class="addTourBtn btn btn-success" style="width:80%;" onclick="addTourButton()" value="Add Tour">
                             <script>
 
                                 function addTourButton() {
                                     console.log("add tour clicked")
+                                    var container = document.getElementById("tourCardsContainer")
+
+                                    var city = document.getElementById("citySelector").value
+                                    var tourism = document.getElementById("tourismSelector").value
+                                    var num = document.getElementById("points").value
+                                    var cost = 100
+
+                                    if (city==='default' || tourism==='default') {
+                                        return null
+                                    }
+                                    var card = document.createElement("div")
+                                    card.innerHTML = ` <div class="listCard shadowBehind">
+                        <div>
+                            <div class="cardText">City</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${city}</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Tourism Services</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${tourism}</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Num</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${num}</div>
+                        </div>
+                        <div>
+                            <div class="cardText">Expenses</div>
+                            <hr class="detailHorizontalRule">
+                            <div class="cardText2">${cost} $</div>
+                        </div>
+
+                        <div class="trashBtnContainer">
+                            <input type="button" class="btTxt trashBtn" onclick="removeTourismServiceButton(this)">
+                        </div>
+                    </div> `
+                                    container.appendChild(card)
                                 }
+
+                                document.getElementsByClassName("trashBtn").addEventListener("click", function() {
+                                    par = elem.parentNode.parentNode
+                                    par.remove()
+                                    console.log("remove")
+                                });
+
                             </script>
                         </div>
                     </div>
@@ -101,7 +146,14 @@
                         </div>
 
                         <div class="trashBtnContainer">
-                            <input type="image" src="images/trash_icon.png" name="saveForm" class="btTxt trashBtn" id="saveForm" />
+                            <input type="button" class="btTxt trashBtn" onclick="removeTourismServiceButton(this)">
+                            <script>
+                                function removeTourismServiceButton(elem) {
+                                    par = elem.parentNode.parentNode
+                                    par.remove()
+                                    console.log("remove")
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>

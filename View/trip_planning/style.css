@@ -150,14 +150,18 @@
     margin-bottom: auto;
 }
 .trashBtn {
-    height: 23px;
+    height: 31px;
+    width: 28px;
     margin-top: auto;
     margin-bottom: auto;
     vertical-align: center;
+    background: #dcdcdc url(./images/trash_icon.png) left no-repeat;
+    background-size: 23px 26px;
+    border: none;
 }
 
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1300px) {
     .aboutUsContainer {
         width: 80%;
         margin-right: 10%;
