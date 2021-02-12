@@ -12,7 +12,7 @@ $("#myform").click(function () {
     ).fail(function (xhr, status, error) {
         $("p").text(xhr.responseText)
     }).done(function (data, textStatus, jqXHR) {
-        let x=jqXHR.responseText;
+        let x=JSON.parse(jqXHR.responseText);
         localStorage.setItem("accessToken",x)
         alert("login successful!")
         window.location.replace("../../index.html");

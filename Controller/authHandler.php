@@ -16,25 +16,28 @@ class authHandler
     private $requestMethod;
     private $expectedType;
     private $mode;
-    function __construct($requestMethod,$expectedType=null)
+    function __construct($requestMethod,$expectedType=null,$mode=null)
     {
         $this->requestMethod=$requestMethod;
         $this->expectedType=$expectedType;
+        $this->mode=$mode;
     }
 
     public function requestProcess(){
         $response=null;
-        if($this->requestMethod=="GET"){
-            $response=$this->validateToken();
+        if(is_null($this->mode) && $this->requestMethod=="GET"){
+            $response=$this->checkCorrectUserType();
         }
-
+        else if(is_null($this->mode)==false && $this->requestMethod=="GET"){
+            $response=$this->refreshAccessToken();
+        }
         header($response["header"]);
         echo json_encode($response["body"]);
     }
 
     public static function generateJwtAccessTokenForUser(User $user){
         $issued_at = time();
-        $expiration_time = $issued_at + (900);
+        $expiration_time = $issued_at + (10);
         $payload=array(
             "start"=>$issued_at,
             "expire"=>$expiration_time,
@@ -47,7 +50,7 @@ class authHandler
 
     public static function generateJwtRefreshTokenForUser(User $user){
         $issued_at = time();
-        $expiration_time = $issued_at + (604800);
+        $expiration_time = $issued_at + (60);
         $payload=array(
             "start"=>$issued_at,
             "expire"=>$expiration_time,
@@ -57,77 +60,68 @@ class authHandler
         );
         $id=JWT::encode($payload,refreshKey);
         $db=new authDB();
-        $sql="INSERT INTO `refreshtokens` (`refresh_id`,`expires_at`) VALUES ($id,$expiration_time)";
+        $sql="INSERT INTO `refreshtokens` (`refresh_id`,`expires_at`) VALUES ('$id','$expiration_time')";
+        $db->getConnection()->query($sql);
         return $id;
     }
 
-//    private function validateToken(){
-//        if(isset($_SERVER['Authorization'])==false){
-//            return $this->createMessageToClient(403,"Access denied!","forbidden!");
-//        }
-//        try {
-//            $token=$_SERVER['Authorization'];
-//            $decoded = JWT::decode($token, keys, array('HS256'));
-//            if((time()-$decoded->expire)>900){
-//                unset($_COOKIE["token"]);
-//                return $this->createMessageToClient(403,"Access denied!","forbidden!");
-//            }
-//            $result=User::getUserById($decoded->data->user_id);
-//            if($result["type"]!=$this->expectedType){
-//                return $this->createMessageToClient(403,"Access denied!" ,"forbidden");
-//            }
-//            return $this->createMessageToClient(200,"ok","access granted!");
-//        }
-//        catch (Exception $exception){
-//            //unset($_COOKIE["token"]);
-//            return $this->createMessageToClient(403,"Access denied!","forbidden!");
-//        }
-//    }
 
-    private function validateToken(){
+    public function checkCorrectUserType(){
+        $decoded=$this->validateToken();
+        if($decoded=="invalid token!" || $decoded=="expired token!") return $this->createMessageToClient("403","access denied!",$decoded);
+        $type=User::getUserById($decoded->data->user_id)["type"];
+        if($type!=$this->expectedType){
+            return $this->createMessageToClient("403","access denied!","access denied!");
+        }
+        return $this->createMessageToClient("200","ok","ok");
+    }
+
+
+    public function validateToken(){
         $token=$this->getBearerToken();
-        $toBeSent="access granted!";
+        //echo $token;
+//        $db=new authDB();
+//        $sql="SELECT * FROM `black_list` WHERE `access_id`='$token'";
+//        if($db->getConnection()->query($sql)->num_rows!=0) return "invalid token!";
         if(is_null($token)){
-            return $this->createMessageToClient("403","Access denied!","forbidden");
+            return "invalid token!";
         }
         try {
             $decoded = JWT::decode($token, keys, array('HS256'));
-            if((time()-$decoded->expire)>900){
-                $toBeSent=$this->refreshAccessToken();
-               //return $this->createMessageToClient(403,"Access denied!","token Expired!");
+            if((time()-$decoded->expire)>10){
+               return "expired token!";
             }
-            $result=User::getUserById($decoded->data->user_id);
-            if($result["type"]!=$this->expectedType){
-               return $this->createMessageToClient(403,"Access denied!" ,"forbidden");
-            }
-            return $this->createMessageToClient(200,"ok",$toBeSent);
+            return $decoded;
         }catch (Exception $e){
-            return $this->createMessageToClient(403,"Access denied!","forbidden!");
+            return "invalid token!";
         }
     }
 
     private function refreshAccessToken(){
         $token=$this->getBearerToken();
         if(is_null($token)){
-            return $this->createMessageToClient("404","Not Found!","");
+            return $this->createMessageToClient("404","Not Found!","not found!");
         }
         try {
-            $decoded = JWT::decode($token, keys, array('HS256'));
             $refreshToken=$_COOKIE["refreshToken"];
+            $decoded = JWT::decode($token, keys, array('HS256'));
             $db=new authDB();
-            $sql="SELECT * FROM `refreshtokens` WHERE `refresh_id`=$refreshToken";
+            $sql="SELECT * FROM `refreshtokens` WHERE `refresh_id`= '$refreshToken' ";
             $result=$db->getConnection()->query($sql);
             if($result->num_rows==0){
-                return $this->createMessageToClient("404","Not Found!","");
+                return $this->createMessageToClient("404","Not Found!","not foundt!");
             }
             $row=$result->fetch_assoc();
             if(time()>$row["expires_at"]){
-                $sql="DELETE FROM `refreshtokens` WHERE `refresh_id`=$refreshToken";
+                $sql="DELETE FROM `refreshtokens` WHERE `refresh_id`= '$refreshToken'";
                 $db->getConnection()->query($sql);
+                unset($_COOKIE["refreshToken"]);
+//                $sql="INSERT INTO `black_list` (`access_id`,`expires_at`) VALUES ('$token','$decoded->expire')";
+//                $db->getConnection()->query($sql);
                 return $this->createMessageToClient("403","Access denied!","forbidden!");
             }
             $issued_at = time();
-            $expiration_time = $issued_at + (900);
+            $expiration_time = $issued_at + (10);
             $payload=array(
                 "start"=>$issued_at,
                 "expire"=>$expiration_time,
@@ -137,7 +131,7 @@ class authHandler
             );
             return $this->createMessageToClient(200,"ok",JWT::encode($payload,keys));
         }catch (Exception $e){
-            return $this->createMessageToClient("404","Not Found!","");
+            return $this->createMessageToClient("404","Not Found!","not found!");
         }
 
 
