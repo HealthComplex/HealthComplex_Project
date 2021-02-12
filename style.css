@@ -33,6 +33,21 @@
 	width: 100%;
 }
 
+.logoutContainer {
+    margin-right: 13px;
+}
+
+.logoutBtn {
+    background-color: #007bff;
+    color: #53e744;
+    border: none;
+    cursor: pointer;
+}
+
+.logoutBtn:hover {
+    color: #eec7c7;
+}
+
 .getStartedContainer {
 	margin-right: 8px;
 }
