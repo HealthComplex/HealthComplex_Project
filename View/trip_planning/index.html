@@ -14,24 +14,19 @@
     <link type="text/css" rel="stylesheet" href="style.css"><link>
     <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
     <script src="../../libs/jquery-3.5.1.js"></script>
-    <script>
-        let xmlHttpRequest=new XMLHttpRequest()
-        xmlHttpRequest.onreadystatechange=function () {
-            if(this.readyState==4){
-                if(this.status!=200){
-                    window.location.replace("../login/index.html");
-                }
-            }
-        }
-        xmlHttpRequest.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",false);
-        xmlHttpRequest.send()
-    </script>
+<!--    <script>-->
+<!--        let xmlHttpRequest=new XMLHttpRequest()-->
+<!--        xmlHttpRequest.onreadystatechange=function () {-->
+<!--            if(this.readyState==4){-->
+<!--                if(this.status!=200){-->
+<!--                    window.location.replace("../login/index.html");-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--        xmlHttpRequest.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",false);-->
+<!--        xmlHttpRequest.send()-->
+<!--    </script>-->
 
     <title>Plan Your Trip</title>
 
@@ -157,36 +152,12 @@
                             <input type="number" id="points" name="points" step="1" class="formInput" min="0" max="20" value="0" style="width: 40%;"><br>
                         </div>
                         <div class="col-auto my-6" style="margin-top:60px;">
-                            <button type="submit" class="addTourBtn btn btn-success" style="width:80%;" id="addTourButton">Add Tour</button>
-                            <script type="text/javascript">
+                            <button  class="addTourBtn btn btn-success" style="width:80%;" onclick="addTourButton()">Add Tour</button>
+                            <script>
 
-                                document.getElementById("addTourButton").addEventListener("click", insertAfter);
-
-                                function insertAfter() {
-                                    var newNode = document.createElement("span");
-                                    el.innerHTML = "test";
-                                    var referenceNode = document.getElementById("tourCardsContainer");
-                                    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-                                }
-
-
-                                // insertAfter(div, el);
-
-
-                                function addTour() {
-
-                                    document.getElementById("tourCardsContainer").insertBefore();
-                                }
-
-                                // $(document).ready(function(){
-                                //     console.log("1111")
-                                //     $(".addTourBtn").on("click",function(){
-                                //
-                                //         $("div:last").after("<div class=item><p>Title</p></div>");
-                                //        console.log("hiilkli")
-                                //     })
-                                //
-                                // })
+                              function addTourButton() {
+                                  document.getElementsByClassName("addTourBtn").innerHTML = "hi"
+                              }
                             </script>
                         </div>
                     </div>
