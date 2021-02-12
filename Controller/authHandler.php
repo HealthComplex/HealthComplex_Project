@@ -37,7 +37,7 @@ class authHandler
 
     public static function generateJwtAccessTokenForUser(User $user){
         $issued_at = time();
-        $expiration_time = $issued_at + (900);
+        $expiration_time = $issued_at + (10);
         $payload=array(
             "start"=>$issued_at,
             "expire"=>$expiration_time,
@@ -50,7 +50,7 @@ class authHandler
 
     public static function generateJwtRefreshTokenForUser(User $user){
         $issued_at = time();
-        $expiration_time = $issued_at + (604800);
+        $expiration_time = $issued_at + (60);
         $payload=array(
             "start"=>$issued_at,
             "expire"=>$expiration_time,
@@ -80,12 +80,15 @@ class authHandler
     public function validateToken(){
         $token=$this->getBearerToken();
         //echo $token;
+//        $db=new authDB();
+//        $sql="SELECT * FROM `black_list` WHERE `access_id`='$token'";
+//        if($db->getConnection()->query($sql)->num_rows!=0) return "invalid token!";
         if(is_null($token)){
             return "invalid token!";
         }
         try {
             $decoded = JWT::decode($token, keys, array('HS256'));
-            if((time()-$decoded->expire)>900){
+            if((time()-$decoded->expire)>10){
                return "expired token!";
             }
             return $decoded;
@@ -100,22 +103,25 @@ class authHandler
             return $this->createMessageToClient("404","Not Found!","not found!");
         }
         try {
-            $decoded = JWT::decode($token, keys, array('HS256'));
             $refreshToken=$_COOKIE["refreshToken"];
+            $decoded = JWT::decode($token, keys, array('HS256'));
             $db=new authDB();
-            $sql="SELECT * FROM `refreshtokens` WHERE `refresh_id`=$refreshToken";
+            $sql="SELECT * FROM `refreshtokens` WHERE `refresh_id`= '$refreshToken' ";
             $result=$db->getConnection()->query($sql);
             if($result->num_rows==0){
                 return $this->createMessageToClient("404","Not Found!","not foundt!");
             }
             $row=$result->fetch_assoc();
             if(time()>$row["expires_at"]){
-                $sql="DELETE FROM `refreshtokens` WHERE `refresh_id`=$refreshToken";
+                $sql="DELETE FROM `refreshtokens` WHERE `refresh_id`= '$refreshToken'";
                 $db->getConnection()->query($sql);
+                unset($_COOKIE["refreshToken"]);
+//                $sql="INSERT INTO `black_list` (`access_id`,`expires_at`) VALUES ('$token','$decoded->expire')";
+//                $db->getConnection()->query($sql);
                 return $this->createMessageToClient("403","Access denied!","forbidden!");
             }
             $issued_at = time();
-            $expiration_time = $issued_at + (900);
+            $expiration_time = $issued_at + (10);
             $payload=array(
                 "start"=>$issued_at,
                 "expire"=>$expiration_time,

@@ -19,9 +19,6 @@
     <script src="../request.js"></script>
     <script>
         data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",null);
-        if(data==="login"){
-            window.location.replace("../login/index.html");
-        }
         if(data!="ok") window.location.replace("../../index.html");
     </script>
 

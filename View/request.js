@@ -8,7 +8,6 @@ function sendAjaxRequest(method,url,data){ /// for requests with authorization!
             }
             else{
                 let response=JSON.parse(this.responseText);
-                alert(response)
                 returned=response;
                 if(response=="invalid token!") {
                     returned="login";
@@ -17,7 +16,7 @@ function sendAjaxRequest(method,url,data){ /// for requests with authorization!
                     if(response=="expired token!") {
                         let data = refreshRequest();
                         if (data === false) {
-                            return "login";
+                            returned= "login";
                         }
                         localStorage.removeItem("accessToken");
                         localStorage.setItem("accessToken",data)
@@ -33,7 +32,6 @@ function sendAjaxRequest(method,url,data){ /// for requests with authorization!
     xhttp.setRequestHeader("Authorization",head);
     if(data==null) xhttp.send()
     else xhttp.send(data)
-    alert("main: "+returned)
     return returned;
 }
 
@@ -47,9 +45,10 @@ function repeatRequest(method,url,data){
         }
     }
     xmlHttpRequest.open(method,url,false)
+    head="Bearer "+window.localStorage.getItem('accessToken');
+    xmlHttpRequest.setRequestHeader("Authorization",head);
     if(data==null) xmlHttpRequest.send()
     else xmlHttpRequest.send(data)
-    alert("repeat: "+response)
     return response;
 }
 
@@ -59,13 +58,16 @@ function refreshRequest(){
     xmlHttpRequest.onreadystatechange=function(){
         if(this.readyState==4){
             if(this.status==200) returned= JSON.parse(this.responseText);
-            else returned= false;
+            else {
+                returned= false;
+                window.localStorage.removeItem("accessToken")
+            }
         }
-        else returned= false;
     }
-    xmlHttpRequest.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/refresh");
+    xmlHttpRequest.open("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/refresh",false);
+    head="Bearer "+window.localStorage.getItem('accessToken');
+    xmlHttpRequest.setRequestHeader("Authorization",head);
     xmlHttpRequest.send();
-    alert("refresh: "+returned)
     return returned;
 }
 

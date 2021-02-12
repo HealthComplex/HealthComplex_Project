@@ -19,7 +19,7 @@
             data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authUser",null);
             if(data=="ok"){window.location.replace("../trip_planning/index.html")}
             data=sendAjaxRequest("GET","http://localhost//HealthComplex_Project/Controller/mainController.php/authAdmin",null);
-            //if(data=="ok")window.location.replace("../adminPanel/account.html");
+            if(data=="ok")window.location.replace("../adminPanel/account.html");
         </script>
         <title>Health Complex|login</title>
     </head>
